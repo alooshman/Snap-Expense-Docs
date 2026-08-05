@@ -9,27 +9,29 @@
         h1 { font-size: 1.8rem; }
         h2 { font-size: 1.2rem; margin-top: 24px; }
         p, li { color: #555; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
     <h1>Privacy Policy for Snap Expense</h1>
-    <p><strong>Last Updated:</strong> July 2026</p>
+    <p><strong>Last Updated:</strong> August 2026</p>
 
     <p>Snap Expense ("we", "our", or "us") respects your privacy. This Privacy Policy explains how data is handled when you use the Snap Expense mobile application.</p>
 
-    <h2>1. Data Collection & Processing</h2>
+    <h2>1. Data Storage & Syncing</h2>
     <p>Snap Expense is designed with user privacy in mind:</p>
     <ul>
-        <li><strong>Local Storage:</strong> Expense records, merchant details, dates, and amounts are stored locally on your device using Apple's SwiftData. We do not maintain external database servers storing your personal expense history.</li>
-        <li><strong>AI Receipt Parsing:</strong> When you scan a receipt, the image is transmitted securely via HTTPS to Google's Gemini API strictly for optical character recognition (OCR) and structured text extraction. Images are processed in real-time and are not stored by us.</li>
+        <li><strong>Local & Personal iCloud Storage:</strong> Expense records, merchant details, dates, categories, notes, and receipt image attachments are stored locally on your device using Apple's SwiftData framework and automatically synchronized across your devices via Apple’s iCloud (CloudKit) service. Your data is stored securely in your private iCloud account container. We do not operate external database servers storing your personal expense history, nor do we have access to your stored iCloud records.</li>
+        <li><strong>AI Receipt Parsing:</strong> When you scan a receipt or import a document/PDF, image payloads are transmitted securely via HTTPS to Google's Gemini API strictly for optical character recognition (OCR) and structured text extraction. Images are processed in real-time and are not stored by us.</li>
     </ul>
 
     <h2>2. In-App Purchases & Billing</h2>
     <p>Subscription and purchase transactions are processed securely by Apple's App Store and managed via RevenueCat. We do not collect or store your payment card numbers, banking details, or billing addresses.</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>We only share data with third-party service providers necessary to deliver core application functionality:</p>
+    <h2>3. Third-Party Services & Infrastructure</h2>
+    <p>We only utilize third-party infrastructure and service providers necessary to deliver core application functionality:</p>
     <ul>
+        <li><strong>Apple iCloud / CloudKit:</strong> For secure cross-device data synchronization and personal cloud backup under your Apple ID.</li>
         <li><strong>Google Gemini API:</strong> For automated AI image parsing and receipt data extraction.</li>
         <li><strong>RevenueCat & Apple App Store:</strong> For validating subscription entitlements and managing Pro tier access.</li>
     </ul>
@@ -38,7 +40,7 @@
     <p>Snap Expense does not track you across third-party apps or websites, nor do we sell, rent, or trade your personal data to advertisers or data brokers.</p>
 
     <h2>5. Data Retention & Deletion</h2>
-    <p>Because your expense data resides locally on your device, deleting the Snap Expense application will permanently erase all stored local records.</p>
+    <p>Your expense data is stored locally on your device and within your personal iCloud account. Deleting the Snap Expense application from a single device removes the local database copy on that device, but synced records will remain securely stored in your personal iCloud container until you delete them within the app or clear them via your iOS iCloud storage settings.</p>
 
     <h2>6. Contact Us</h2>
     <p>If you have questions regarding this Privacy Policy, you may contact us at <code>snicks.legate-7y@icloud.com</code>.</p>
