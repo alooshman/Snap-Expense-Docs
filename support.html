@@ -138,6 +138,11 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        footer nav a[aria-current="page"] {
+            font-weight: 600;
+            color: var(--text);
+        }
     </style>
 </head>
 <body>
@@ -193,7 +198,7 @@
         <nav aria-label="Legal Navigation">
             <a href="privacy.html">Privacy Policy</a> &bull;
             <a href="terms.html">Terms of Service</a> &bull;
-            <a href="support.html">Support</a>
+            <a href="support.html" aria-current="page">Support</a>
         </nav>
     </footer>
 </div>
