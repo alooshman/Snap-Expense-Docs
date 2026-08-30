@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snap Expense - Support & Help Center</title>
+    <title>Support & Help Center - Snap Expense</title>
     <style>
         :root {
             --primary: #007AFF;
@@ -11,6 +11,7 @@
             --card-bg: #FFFFFF;
             --text: #1C1C1E;
             --text-secondary: #8E8E93;
+            --border: #E5E5EA;
         }
 
         body {
@@ -21,10 +22,11 @@
             padding: 40px 20px;
             display: flex;
             justify-content: center;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 680px;
             width: 100%;
         }
 
@@ -41,14 +43,14 @@
 
         .header p {
             color: var(--text-secondary);
-            font-size: 16px;
+            font-size: 15px;
             margin: 0;
         }
 
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 24px;
+            padding: 32px;
             margin-bottom: 24px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
@@ -71,6 +73,7 @@
 
         .btn:hover {
             opacity: 0.9;
+            text-decoration: none;
         }
 
         h2 {
@@ -91,12 +94,13 @@
             font-weight: 600;
             font-size: 15px;
             margin-bottom: 4px;
+            color: var(--text);
         }
 
         .faq-answer {
             font-size: 14px;
             color: #3A3A3C;
-            line-height: 1.4;
+            line-height: 1.5;
             margin: 0;
         }
 
@@ -107,9 +111,14 @@
             margin-top: 32px;
         }
 
+        .footer nav {
+            margin-top: 8px;
+        }
+
         .footer a {
             color: var(--primary);
             text-decoration: none;
+            margin: 0 8px;
         }
     </style>
 </head>
@@ -121,7 +130,7 @@
         <p>We're here to help you get the most out of your expense tracking.</p>
     </div>
 
-    <!-- Contact Card (Required by Apple Reviewers) -->
+    <!-- Contact Card -->
     <div class="card cta-box">
         <h2>Need Assistance?</h2>
         <p style="margin: 0 0 12px 0; color: #3A3A3C;">Have a bug to report or a feature request? Drop us an email and we'll get back to you shortly.</p>
@@ -137,14 +146,14 @@
             <p class="faq-answer">Open Snap Expense, navigate to Settings or the Upgrade screen, and tap "Restore Purchases." Make sure you are signed into the same Apple ID used for the original purchase.</p>
         </div>
 
-        <hr style="border: none; border-top: 1px solid #E5E5EA; margin: 16px 0;">
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;">
 
         <div class="faq-item">
             <p class="faq-question">Are my receipts stored on external servers?</p>
             <p class="faq-answer">No. Your expense records and receipt database are stored locally on your device and synced securely across your devices via your personal iCloud account. We do not maintain external database servers to store your history. When scanning a receipt or importing a document/PDF, image files are transmitted securely over an encrypted connection solely for automated real-time optical character recognition (OCR) and structured data extraction. Data is processed ephemerally, is never reviewed by human annotators, is never used to train artificial intelligence models, is never used to track users across services, and is not permanently stored or retained on remote servers.</p>
         </div>
 
-        <hr style="border: none; border-top: 1px solid #E5E5EA; margin: 16px 0;">
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;">
 
         <div class="faq-item">
             <p class="faq-question">How do I export my data for tax filing?</p>
@@ -153,8 +162,12 @@
     </div>
 
     <div class="footer">
-        <p>&copy; Snap Expense. All rights reserved.</p>
-        <p><a href="https://alooshman.github.io/Snap-Expense-Docs/privacy.html">Privacy Policy</a></p>
+        <p>&copy; 2026 Snap Expense. All rights reserved.</p>
+        <nav>
+            <a href="privacy.html">Privacy Policy</a> &bull;
+            <a href="terms.html">Terms of Service</a> &bull;
+            <a href="support.html">Support</a>
+        </nav>
     </div>
 </div>
 
