@@ -10,7 +10,7 @@
             --bg: #F2F2F7;
             --card-bg: #FFFFFF;
             --text: #1C1C1E;
-            --text-secondary: #8E8E93;
+            --text-secondary: #636366; /* WCAG AA Compliant contrast ratio */
             --border: #E5E5EA;
         }
 
@@ -30,18 +30,18 @@
             width: 100%;
         }
 
-        .header {
+        header {
             text-align: center;
             margin-bottom: 32px;
         }
 
-        .header h1 {
+        header h1 {
             font-size: 28px;
             font-weight: 700;
             margin: 0 0 8px 0;
         }
 
-        .header p {
+        header p {
             color: var(--text-secondary);
             font-size: 15px;
             margin: 0;
@@ -73,7 +73,11 @@
 
         .btn:hover {
             opacity: 0.9;
-            text-decoration: none;
+        }
+
+        .btn:focus-visible, a:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 3px;
         }
 
         h2 {
@@ -104,71 +108,94 @@
             margin: 0;
         }
 
-        .footer {
+        p {
+            font-size: 15px;
+            color: #3A3A3C;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        footer {
             text-align: center;
             font-size: 13px;
             color: var(--text-secondary);
             margin-top: 32px;
         }
 
-        .footer nav {
+        footer nav {
             margin-top: 8px;
         }
 
-        .footer a {
+        footer a {
             color: var(--primary);
             text-decoration: none;
             margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
+    <header>
         <h1>Snap Expense Support</h1>
         <p>We're here to help you get the most out of your expense tracking.</p>
-    </div>
+    </header>
 
-    <!-- Contact Card -->
-    <div class="card cta-box">
-        <h2>Need Assistance?</h2>
-        <p style="margin: 0 0 12px 0; color: #3A3A3C;">Have a bug to report or a feature request? Drop us an email and we'll get back to you shortly.</p>
-        <a href="mailto:snicks.legate-7y@icloud.com?subject=Snap%20Expense%20Support%20Request" class="btn">Contact Support</a>
-    </div>
+    <main>
+        <!-- Contact Card -->
+        <section class="card cta-box" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Need Assistance?</h2>
+            <p style="margin: 0 0 12px 0;">Have a bug to report, feature request, or general inquiry? Drop us an email and we'll get back to you shortly.</p>
+            <a href="mailto:snicks.legate-7y@icloud.com?subject=Snap%20Expense%20Support%20Request" class="btn">Contact Support</a>
+        </section>
 
-    <!-- Frequently Asked Questions -->
-    <div class="card">
-        <h2>Frequently Asked Questions</h2>
-        
-        <div class="faq-item">
-            <p class="faq-question">How do I restore my Pro purchase?</p>
-            <p class="faq-answer">Open Snap Expense, navigate to Settings or the Upgrade screen, and tap "Restore Purchases." Make sure you are signed into the same Apple ID used for the original purchase.</p>
-        </div>
+        <!-- Accessibility Statement Card -->
+        <section class="card" aria-labelledby="accessibility-heading">
+            <h2 id="accessibility-heading">Accessibility Commitment</h2>
+            <p>Snap Expense is committed to ensuring digital accessibility for people of all abilities. We continuously improve the user experience for everyone and apply relevant WCAG 2.1 Level AA accessibility standards across our iOS application and web resources.</p>
+            <p style="margin-bottom: 0;">If you experience any difficulty accessing content or using features, please email us directly at <a href="mailto:snicks.legate-7y@icloud.com?subject=Snap%20Expense%20Accessibility%20Assistance">snicks.legate-7y@icloud.com</a>. We take all accessibility feedback seriously and actively remediate reported barriers.</p>
+        </section>
 
-        <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;">
+        <!-- Frequently Asked Questions -->
+        <section class="card" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Frequently Asked Questions</h2>
+            
+            <article class="faq-item">
+                <p class="faq-question">How do I restore my Pro purchase?</p>
+                <p class="faq-answer">Open Snap Expense, navigate to Settings or the Upgrade screen, and tap "Restore Purchases." Make sure you are signed into the same Apple ID used for the original purchase.</p>
+            </article>
 
-        <div class="faq-item">
-            <p class="faq-question">Are my receipts stored on external servers?</p>
-            <p class="faq-answer">No. Your expense records and receipt database are stored locally on your device and synced securely across your devices via your personal iCloud account. We do not maintain external database servers to store your history. When scanning a receipt or importing a document/PDF, image files are transmitted securely over an encrypted connection solely for automated real-time optical character recognition (OCR) and structured data extraction. Data is processed ephemerally, is never reviewed by human annotators, is never used to train artificial intelligence models, is never used to track users across services, and is not permanently stored or retained on remote servers.</p>
-        </div>
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;" aria-hidden="true">
 
-        <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;">
+            <article class="faq-item">
+                <p class="faq-question">Are my receipts stored on external servers?</p>
+                <p class="faq-answer">No. Your expense records and receipt database are stored locally on your device and synced securely across your devices via your personal iCloud account. We do not maintain external database servers to store your history. When scanning a receipt or importing a document/PDF, image files are transmitted securely over an encrypted connection solely for automated real-time optical character recognition (OCR) and structured data extraction. Data is processed ephemerally, is never reviewed by human annotators, is never used to train artificial intelligence models, is never used to track users across services, and is not permanently stored or retained on remote servers.</p>
+            </article>
 
-        <div class="faq-item">
-            <p class="faq-question">How do I export my data for tax filing?</p>
-            <p class="faq-answer">Go to the main list or reports view and tap the Export button. You can generate a compiled, audit-ready PDF expense report (with receipt attachments) or a clean CSV spreadsheet compatible with Excel, QuickBooks, Numbers, or your accountant.</p>
-        </div>
-    </div>
+            <hr style="border: none; border-top: 1px solid var(--border); margin: 16px 0;" aria-hidden="true">
 
-    <div class="footer">
+            <article class="faq-item">
+                <p class="faq-question">How do I export my data for tax filing?</p>
+                <p class="faq-answer">Go to the main list or reports view and tap the Export button. You can generate a compiled, audit-ready PDF expense report (with receipt attachments) or a clean CSV spreadsheet compatible with Excel, QuickBooks, Numbers, or your accountant.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
         <p>&copy; 2026 Snap Expense. All rights reserved.</p>
-        <nav>
+        <nav aria-label="Legal Navigation">
             <a href="privacy.html">Privacy Policy</a> &bull;
             <a href="terms.html">Terms of Service</a> &bull;
             <a href="support.html">Support</a>
         </nav>
-    </div>
+    </footer>
 </div>
 
 </body>
