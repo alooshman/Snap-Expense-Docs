@@ -10,7 +10,7 @@
             --bg: #F2F2F7;
             --card-bg: #FFFFFF;
             --text: #1C1C1E;
-            --text-secondary: #8E8E93;
+            --text-secondary: #636366; /* WCAG AA Compliant contrast ratio */
             --border: #E5E5EA;
         }
 
@@ -30,18 +30,18 @@
             width: 100%;
         }
 
-        .header {
+        header {
             text-align: center;
             margin-bottom: 32px;
         }
 
-        .header h1 {
+        header h1 {
             font-size: 28px;
             font-weight: 700;
             margin: 0 0 8px 0;
         }
 
-        .header p {
+        header p {
             color: var(--text-secondary);
             font-size: 15px;
             margin: 0;
@@ -85,40 +85,50 @@
 
         a {
             color: var(--primary);
-            text-decoration: none;
-        }
-
-        a:hover {
             text-decoration: underline;
         }
 
-        .footer {
+        a:hover {
+            opacity: 0.8;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        footer {
             text-align: center;
             font-size: 13px;
             color: var(--text-secondary);
             margin-top: 32px;
         }
 
-        .footer nav {
+        footer nav {
             margin-top: 8px;
         }
 
-        .footer a {
+        footer a {
             color: var(--primary);
             text-decoration: none;
             margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
+    <header>
         <h1>Terms of Service</h1>
         <p>Last Updated: August 30, 2026</p>
-    </div>
+    </header>
 
-    <div class="card">
+    <main class="card">
         <p>Welcome to <strong>Snap Expense</strong>. By downloading, installing, or using the Snap Expense mobile application (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
 
         <h2>1. Overview & Disclaimer of Professional Advice</h2>
@@ -150,21 +160,24 @@
         <h2>7. Governing Law</h2>
         <p>These Terms shall be governed by and construed in accordance with the laws of the State of Washington, USA, without regard to its conflict of law principles.</p>
 
-        <h2>8. Changes to These Terms</h2>
+        <h2>8. Accessibility Statement</h2>
+        <p>Snap Expense is dedicated to providing an accessible experience for all users. We continuously strive to conform with WCAG 2.1 Level AA standards. If you encounter any accessibility issues while interacting with our software or digital documentation, please notify us at <a href="mailto:snicks.legate-7y@icloud.com">snicks.legate-7y@icloud.com</a> for prompt assistance and remediation.</p>
+
+        <h2>9. Changes to These Terms</h2>
         <p>We reserve the right to update or modify these Terms at any time. Any changes will be effective immediately upon posting to this page with an updated "Last Updated" date. Your continued use of the App following the posting of changes constitutes your acceptance of such modifications.</p>
 
-        <h2>9. Contact Information</h2>
+        <h2>10. Contact Information</h2>
         <p>If you have any questions or concerns regarding these Terms, please contact us at <a href="mailto:snicks.legate-7y@icloud.com">snicks.legate-7y@icloud.com</a>.</p>
-    </div>
+    </main>
 
-    <div class="footer">
+    <footer>
         <p>&copy; 2026 Snap Expense. All rights reserved.</p>
-        <nav>
+        <nav aria-label="Legal Navigation">
             <a href="privacy.html">Privacy Policy</a> &bull;
             <a href="terms.html">Terms of Service</a> &bull;
             <a href="support.html">Support</a>
         </nav>
-    </div>
+    </footer>
 </div>
 
 </body>
