@@ -6,12 +6,28 @@
     <title>Terms of Service - Snap Expense</title>
     <style>
         :root {
+            color-scheme: light dark;
             --primary: #007AFF;
             --bg: #F2F2F7;
             --card-bg: #FFFFFF;
             --text: #1C1C1E;
-            --text-secondary: #636366; /* WCAG AA Compliant contrast ratio */
+            --text-body: #3A3A3C;
+            --text-secondary: #636366;
             --border: #E5E5EA;
+            --shadow: rgba(0, 0, 0, 0.04);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #0A84FF;
+                --bg: #000000;
+                --card-bg: #1C1C1E;
+                --text: #FFFFFF;
+                --text-body: #E5E5EA;
+                --text-secondary: #98989D;
+                --border: #2C2C2E;
+                --shadow: rgba(0, 0, 0, 0.4);
+            }
         }
 
         body {
@@ -52,7 +68,7 @@
             border-radius: 12px;
             padding: 32px;
             margin-bottom: 24px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px var(--shadow);
         }
 
         h2 {
@@ -71,7 +87,7 @@
 
         p, li {
             font-size: 15px;
-            color: #3A3A3C;
+            color: var(--text-body);
         }
 
         ul {
